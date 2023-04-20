@@ -11,7 +11,7 @@ interface GameProps {
 const GameCard = ({ game }: GameProps) => {
   {console.log(game.parent_platforms)}
   return (
-    <Card borderRadius={10} overflow='hidden'>
+    <Card width='100%' borderRadius={10} overflow='hidden'>
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <Heading fontSize='2xl'>{game.name}</Heading>
