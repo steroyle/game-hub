@@ -9,7 +9,6 @@ interface GameProps {
 }
 
 const GameCard = ({ game }: GameProps) => {
-  {console.log(game.parent_platforms)}
   return (
     <Card>
       <Image src={getCroppedImageUrl(game.background_image)} />
