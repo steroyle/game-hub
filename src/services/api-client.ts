@@ -1,4 +1,8 @@
 import axois from "axios";
+export interface FetchResponse<T> {
+  count: number;
+  results: T[];
+}
 
 export default axois.create({
   baseURL: 'https://api.rawg.io/api',
