@@ -11,12 +11,15 @@ interface GameProps {
 }
 
 const GameCard = ({ game }: GameProps) => {
+
+  if (!game) return null;
+
   return (
     <Card>
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <HStack justifyContent='space-between' marginBottom={3}>
-          <PlatformIconList platforms={game.parent_platforms.map(({ platform }) => platform)} />
+          {game.parent_platforms && <PlatformIconList platforms={game.parent_platforms.map(({ platform }) => platform)} />}
           <CricticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize='2xl'><Link to={`/games/${game.slug}`}>{game.name}<Emoji rating={game.rating_top} /></Link></Heading>
